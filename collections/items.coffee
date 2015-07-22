@@ -1,0 +1,15 @@
+#
+
+@Items = new Mongo.Collection 'items'
+
+#
+
+if Meteor.isServer
+
+	#
+
+	Meteor.publish 'items', (id) ->
+		unless @userId
+			@ready()
+
+		Items.find { creatorId: id }

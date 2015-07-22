@@ -1,0 +1,11 @@
+template(name='viewService')
+
+	ul
+
+		li
+			h1 商家 - {{user.username}}
+
+		each items
+			li
+				a(href='#').add-to-cart 加入购物车
+				span - 服务项目 - {{title}} - ￥{{price}}

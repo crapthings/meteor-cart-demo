@@ -1,0 +1,11 @@
+template(name='home')
+
+	ul
+
+		li
+			h1 首页
+
+		each users
+
+			li
+				a(href='{{pathFor route="viewService"}}') 商家 - {{username}}

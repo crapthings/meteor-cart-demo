@@ -1,0 +1,11 @@
+template(name='cart')
+
+	ul
+		li
+			h1 购物车
+
+		each cart.items
+
+			li
+				a.remove-from-cart(href='#') 移除
+				a - {{title}} - ￥{{price}}
