@@ -1,11 +1,19 @@
 template(name='cart')
 
+	h1 购物车
 	ul
 		li
-			h1 购物车
+			a(href='#').empty-cart 清空购物车
+		li
+			a 结算 ￥{{totalPrice}}
 
-		each cart.items
+	each services
 
+		ul
 			li
-				a.remove-from-cart(href='#') 移除
-				a - {{title}} - ￥{{price}}
+				a 商家 - {{username}}
+				ul
+					each ../items _id
+						li
+							a 商品 - {{title}} - ￥{{price}}
+							a.remove-from-cart(href='#') 删除

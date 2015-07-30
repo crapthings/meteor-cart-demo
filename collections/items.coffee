@@ -13,3 +13,11 @@ if Meteor.isServer
 			@ready()
 
 		Items.find { creatorId: id }
+
+	#
+
+	Meteor.publish 'findItems', (selector) ->
+		unless @userId
+			@ready()
+
+		Items.find selector

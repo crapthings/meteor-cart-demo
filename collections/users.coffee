@@ -20,3 +20,12 @@ if Meteor.isServer
 			@ready()
 
 		Meteor.users.find { _id: id }
+
+
+	#
+
+	Meteor.publish 'findServices', (selector) ->
+		unless @userId
+			@ready()
+
+		Meteor.users.find selector

@@ -5,7 +5,7 @@ template(name='layout')
 			a(href='{{pathFor route="home"}}') 首页
 
 		li
-			a(href='{{pathFor route="cart"}}') 购物车
+			a(href='{{pathFor route="cart"}}') 购物车 ({{cart.items.length}})
 
 		li
 			a(href='#' onclick='Meteor.logout();') 注销

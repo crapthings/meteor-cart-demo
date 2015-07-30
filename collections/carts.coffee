@@ -12,6 +12,11 @@ Meteor.methods
 			$pull:
 				items: opt
 
+	emptyCart: ->
+		Carts.update { userId: Meteor.userId() },
+			$set:
+				items: []
+
 if Meteor.isServer
 
 	Meteor.publish '', ->
